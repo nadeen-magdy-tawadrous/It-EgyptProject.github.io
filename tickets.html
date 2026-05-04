@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tickets</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.google.com/share?selection.family=Dancing+Script:wght@400..700" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Playwrite+NO:wght@100..400&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body class="tickets-body">
+  <nav class="navbar">
+    <div class="logo">MISR LEGACY</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="search.html">Search</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="tickets.html">Tickets</a>
+      <a href="contact.html">Contact us</a>
+      <a href="artifact.html">Artifact Details</a>
+      <a href="profile.html">Profile</a>
+    </div>
+  </nav>
+  <div class="search-container">
+    <input type="text" id="tableSearch" placeholder="Search for anything in this table" />
+  </div>
+  <table class="tickets-table" border="1" id="ticketsTable">
+    <tr>
+      <th>Museum/Site</th>
+      <th>Location</th>
+      <th>Ticket prices (EGP)</th>
+      <th>Includes</th>
+      <th>Book a ticket</th>
+    </tr>
+    <tr>
+      <td rowspan="3">
+        Egyptian<br />
+        Museum
+      </td>
+      <td rowspan="3">Tahrir,<br />Cairo</td>
+      <td>Adult <b>200</b> <br />(Foreign) <b>EGP</b></td>
+      <td rowspan="3">
+        Mummies<br />Hall<br />Tutankhamun<br />Treasures<br />Papyrus<br />Collection
+      </td>
+      <td rowspan="3" style="text-align: center">
+        <button type="button" onclick="
+              let s = this.parentElement.querySelector('.count');
+              s.innerText = parseInt(s.innerText) + 1;
+            ">
+          add
+        </button>
+        <br />
+        <span class="count" style="color: white; font-size: bold">0</span>
+        <br />
+        <button type="button" onclick="
+              let s = this.parentElement.querySelector('.count');
+              let v = parseInt(s.innerText);
+              if (v > 0) s.innerText = v - 1;
+            ">
+          cancel
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td>Student<b>100</b><br /><b>EGP</b></td>
+    </tr>
+    <tr>
+      <td>Egyptian<b>20</b><br />Citizin <b>EGP</b></td>
+    </tr>
+    <tr>
+      <td rowspan="3">
+        GEM<br />(Grand <br />Egyptian<br />
+        Museum)
+      </td>
+      <td rowspan="3">Giza</td>
+      <td>Adult <b>450</b> <br />(Foreign)<b>EGP</b></td>
+      <td rowspan="3">
+        Tutankhamun<br />Gallery.Gift<br />Shop<br />Restaurants<br />VP<br />Experiences
+      </td>
+      <td rowspan="3" style="text-align: center">
+        <button type="button" onclick="
+              let s = this.parentElement.querySelector('.count');
+              s.innerText = parseInt(s.innerText) + 1;
+            ">
+          add
+        </button>
+        <br />
+        <span class="count" style="color: white; font-size: bold">0</span>
+        <br />
+        <button type="button" onclick="
+              let s = this.parentElement.querySelector('.count');
+              let v = parseInt(s.innerText);
+              if (v > 0) s.innerText = v - 1;
+            ">
+          cancel
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td>Student<b>200</b><br /><b>EGP</b></td>
+    </tr>
+    <tr>
+      <td>Egyptian<b>50</b><br />Citizin <b>EGP</b></td>
+    </tr>
+    <tr>
+      <td rowspan="3">Luxor<br />Temple</td>
+      <td rowspan="3">Luxor</td>
+      <td>Adult <b>160</b> <br />(Foreign)<b>EGP</b></td>
+      <td rowspan="3">
+        Open-air<br />Temple<br />Night<br />Lighting<br />Avenue of<br />Sphinxes
+      </td>
+      <td rowspan="3" style="text-align: center">
+        <button type="button" onclick="
+              let s = this.parentElement.querySelector('.count');
+              s.innerText = parseInt(s.innerText) + 1;
+            ">
+          add
+        </button>
+        <br />
+        <span class="count" style="color: white; font-size: bold">0</span>
+        <br />
+        <button type="button" onclick="
+              let s = this.parentElement.querySelector('.count');
+              let v = parseInt(s.innerText);
+              if (v > 0) s.innerText = v - 1;
+            ">
+          cancel
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td>Student<b>80</b><br /><b>EGP</b></td>
+    </tr>
+    <tr>
+      <td>Egyptian<b>10</b><br />Citizin <b>EGP</b></td>
+    </tr>
+    <tr>
+      <td rowspan="3">Abu<br />Simble</td>
+      <td rowspan="3">Aswan</td>
+      <td>Adult <b>240</b> <br />(Foreign)<b>EGP</b></td>
+      <td rowspan="3">
+        Twin Temples<br />.Sound &<br />Light Show.<br />Lake Nasser<br />View
+      </td>
+      <td rowspan="3" style="text-align: center">
+        <button type="button" onclick="
+              let s = this.parentElement.querySelector('.count');
+              s.innerText = parseInt(s.innerText) + 1;
+            ">
+          add
+        </button>
+        <br />
+        <span class="count" style="color: white; font-size: bold">0</span>
+        <br />
+        <button type="button" onclick="
+              let s = this.parentElement.querySelector('.count');
+              let v = parseInt(s.innerText);
+              if (v > 0) s.innerText = v - 1;
+            ">
+          cancel
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td>Student<b>120</b><br /><b>EGP</b></td>
+    </tr>
+    <tr>
+      <td>Egyptian<b>20</b><br />Citizin <b>EGP</b></td>
+    </tr>
+  </table>
+
+  <script src="egypt.js"></script>
+</body>
+
+</html>
+

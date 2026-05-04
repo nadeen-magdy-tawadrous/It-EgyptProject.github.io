@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.google.com/share?selection.family=Dancing+Script:wght@400..700" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Playwrite+NO:wght@100..400&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+    <style>
+   
+    .search-box {
+    background-color: #050505;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 93vh;
+    margin: 0;
+}
+
+form {
+    display: flex;
+    background: #111;
+    padding: 5px;
+    border-radius: 12px;
+
+    border: 1px solid #B8860B;
+    box-shadow: 0 4px 15px #b8860b66;
+
+}
+
+input[type="search"] {
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 12px 15px;
+    width: 280px;
+    outline: none;
+}
+
+input[type="submit"] {
+    background: linear-gradient(135deg, #D4AF37, #B8860B);
+
+    border: none;
+    border-radius: 8px;
+    padding: 0 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+    </style>
+
+    </head>
+    <body class="search-body">
+      <nav class="navbar">
+        <div class="logo">MISR LEGACY</div>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="search.html">Search</a>
+          <a href="gallery.html">Gallery</a> 
+          <a href="tickets.html">Tickets</a>
+          <a href="contact.html">Contact us</a>
+          <a href="artifact.html">Artifact Details</a>
+          <a href="profile.html">Profile</a>
+        </div>
+      </nav>
+
+      <div class="search-box">
+        <form method="get" action="artifact.html"><input type="search" required placeholder="Search Here"
+                name="search">
+            <input type="submit" value="FIND RESULT">
+        </form>
+
+    </div>
+    <script src="egypt.js"></script>
+    </body>
+</html>

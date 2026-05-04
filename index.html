@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MISR LEGACY</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.google.com/share?selection.family=Dancing+Script:wght@400..700" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Playwrite+NO:wght@100..400&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body class="index-body">
+  <nav class="navbar">
+    <div class="logo">MISR LEGACY</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="search.html">Search</a>
+      <a href="contact.html">Contact us</a>
+      <a href="artifact.html">Artifact Details</a>
+      <a href="profile.html">Profile</a>
+    </div>
+    <div class="auth-buttons">
+      <button class="login-btn" onclick="doLogin()">LOGIN</button>
+      <button class="signup-btn" onclick="doSignup()">SIGN UP</button>
+    </div>
+  </nav>
+
+  <div class="hero-section">
+    <section class="hero">
+      <h2>DISCOVER <span class="ANCIENT">ANCIENT</span> EGYPT</h2>
+      <div class="buttons">
+        <a href="gallery.html">EXPLORE GALLERY</a>
+        <a href="tickets.html">BOOK TICKETS</a>
+      </div>
+    </section>
+  </div>
+    
+  <section class="video-section">
+    <div class="video-container">
+      <h2 class="video-title">EXPLORE THE SECRETS</h2>
+      <video controls poster="images/poster.jpeg" class="ancient-video">
+        <source src="images/video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </section>
+
+  <footer>
+    <p>©MISR LEGACY 2026</p>
+  </footer>
+
+    <!-- LOGIN -->
+  <div id="loginBox" class="popup-overlay">
+    <div class="popup-box">
+      <span class="close-x" onclick="closeAll()">×</span>
+      <h2>Login</h2>
+      <input type="text"     id="li-username" placeholder="Username" autocomplete="username">
+      <input type="password" id="li-password" placeholder="Password" autocomplete="current-password">
+      <p class="auth-msg" id="login-msg"></p>
+      <button class="submit-btn" onclick="doLoginSubmit()">LOGIN</button>
+      <p class="switch-link">Don't have an account?
+        <span onclick="closeAll();doSignup()">Sign Up</span>
+      </p>
+    </div>
+  </div>
+ 
+  <!-- SIGN UP -->
+  <div id="signupBox" class="popup-overlay">
+    <div class="popup-box">
+      <span class="close-x" onclick="closeAll()">×</span>
+      <h2>Sign Up</h2>
+      <input type="text"     id="su-name"     placeholder="Full Name">
+      <input type="text"     id="su-username" placeholder="Username" autocomplete="username">
+      <input type="email"    id="su-email"    placeholder="Email Address">
+      <input type="password" id="su-password" placeholder="Password (min 6 chars)" autocomplete="new-password">
+      <input type="password" id="su-confirm"  placeholder="Confirm Password"        autocomplete="new-password">
+      <p class="auth-msg" id="signup-msg"></p>
+      <button class="submit-btn" onclick="doSignupSubmit()">CREATE ACCOUNT</button>
+      <p class="switch-link">Already have an account?
+        <span onclick="closeAll();doLogin()">Login</span>
+      </p>
+    </div>
+  </div>
+    <script src="egypt.js"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Profile</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.google.com/share?selection.family=Dancing+Script:wght@400..700" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Playwrite+NO:wght@100..400&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  </head>
+  <body class="profile">
+    <!--LINKS-->
+     <nav class="navbar">
+    <div class="logo">MISR LEGACY</div>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="search.html">Search</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="tickets.html">Tickets</a>
+        <a href="contact.html">Contact us</a>
+        <a href="artifact.html">Artifact Details</a>
+        <a href="profile.html">Profile</a>
+    </div>
+</nav>
+
+    <br />
+    <!-- PROFILE PICTURE -->
+    <div class="avatar-section">
+      <img id="avatar-img" src="" alt="profile picture" />
+      <div id="avatar-initials">PP</div>
+      <br />
+      <label
+        >Change Photo:
+        <input type="file" accept="image/*" onchange="inputAvatar(this)"
+      /></label>
+    </div>
+
+    <br />
+    <hr />
+
+    <!-- VIEW  -->
+    <div id="view-info">
+      <h3 class="profile-title">My Profile</h3>
+      <table class="info-table">
+        <tr>
+          <td><b>Name</b></td>
+          <td id="full-name"></td>
+        </tr>
+        <tr>
+          <td><b>Email</b></td>
+          <td id="email"></td>
+        </tr>
+        <tr>
+          <td><b>Gender</b></td>
+          <td id="gender"></td>
+        </tr>
+        <tr>
+          <td><b>Nationality</b></td>
+          <td id="nationality"></td>
+        </tr>
+        <tr>
+          <td><b>Date of Birth</b></td>
+          <td id="dob"></td>
+        </tr>
+      </table>
+      <br />
+      <button class="btn-profile" onclick="showEdit()">Edit Profile</button>
+    </div>
+
+    <!-- EDIT -->
+    <div id="edit-info" class="hidden">
+      <h3 class="profile-title">Edit Profile</h3>
+      <table class="info-table">
+        <tr>
+          <td><b>Name</b></td>
+          <td><input type="text" id="e-name" /></td>
+        </tr>
+        <tr>
+          <td><b>Email</b></td>
+          <td><input type="email" id="e-email" /></td>
+        </tr>
+        <tr>
+          <td><b>Gender</b></td>
+          <td>
+            <select id="e-gender">
+              <option>Female</option>
+              <option>Male</option>
+              <option>Prefer not to say</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Nationality</b></td>
+          <td>
+            <select id="e-nationality">
+              <option value="Egyptian">Egyptian</option>
+              <option value="Other">Other</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Date of Birth</b></td>
+          <td><input  type="date" id="e-dob" /></td>
+        </tr>
+      </table>
+      <br />
+      <button class="btn-profile" onclick="saveInfo()">Save</button>
+    </div>
+
+    <hr>
+
+     <!-- BOOKED TICKETS -->
+  <div class="tickets-profile-section">
+    <h3>🎟️ My Booked Tickets</h3>
+    <div id="booked-tickets-section">
+      <p style="color:#aaa;">Loading…</p>
+    </div>
+    <button class="clear-tickets-btn" onclick="clearAllTickets()">Clear All Tickets</button>
+  </div>
+ 
+  <br /><br />
+ 
+    <script src="egypt.js"></script>
+  </body>
+</html>
+
