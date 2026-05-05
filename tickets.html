@@ -126,13 +126,13 @@
           add
         </button>
         <br />
-        <span class="count" style="color: white; font-size: bold">0</span>
+        <span class="count" style="color: white; font-weight: bold">0</span>
         <br />
         <button type="button" onclick="
-              let s = this.parentElement.querySelector('.count');
-              let v = parseInt(s.innerText);
-              if (v > 0) s.innerText = v - 1;
-            ">
+        let s = this.closest('td').querySelector('.count');
+        let v = parseInt(s.innerText);
+        if (v > 0) s.innerText = v - 1;
+      ">
           cancel
         </button>
       </td>

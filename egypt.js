@@ -177,7 +177,7 @@ function inputAvatar(input) {
     img.style.display = "inline";
     if (initials) initials.style.display = "none";
 
-     avatar to storage
+    // save avatar to storage
     var key = getProfileKey();
     var data = loadProfile(key);
     data.avatar = e.target.result;
@@ -298,7 +298,7 @@ function bookTickets() {
     return;
   }
 
-   bookings to storage
+  // save bookings to storage
   var existing = JSON.parse(localStorage.getItem("misr-tickets") || "[]");
   booked.forEach(function (b) { existing.push(b); });
   localStorage.setItem("misr-tickets", JSON.stringify(existing));
@@ -366,36 +366,69 @@ function clearAllTickets() {
 }
 
 
-/* SEARCH  */
+/* SEARCH */
 document.addEventListener("DOMContentLoaded", function () {
-  var searchInput = document.getElementById("tableSearch");
-  if (!searchInput) return;
 
-  searchInput.addEventListener("keyup", function () {
-    var filter = searchInput.value.toLowerCase();
-    var table = document.getElementById("ticketsTable");
-    var cells = table.getElementsByTagName("td");
+  // ── nada.html artifact list search ──
+  var artifactInput = document.getElementById('input-search-search');
+  if (artifactInput) {
+    var artifactItems = document.querySelectorAll('.item-search');
+    var countEl       = document.getElementById('results-count-search');
+    var noResults     = document.getElementById('no-results-search');
+    var noResultsQ    = document.getElementById('no-results-query-search');
 
-    if (filter === "") {
-      for (var i = 0; i < cells.length; i++) {
-        cells[i].style.backgroundColor = "";
-        cells[i].style.opacity = "1";
+    artifactInput.addEventListener('input', function () {
+      var query   = artifactInput.value.trim().toLowerCase();
+      var visible = 0;
+
+      artifactItems.forEach(function (item) {
+        var text  = item.innerText.toLowerCase();
+        var match = !query || text.includes(query);
+        item.style.display = match ? 'block' : 'none';
+        if (match) visible++;
+      });
+
+      if (countEl) countEl.textContent = visible + ' RESULT' + (visible !== 1 ? 'S' : '');
+
+      if (noResults) {
+        if (visible === 0) {
+          noResults.style.display = 'block';
+          if (noResultsQ) noResultsQ.textContent = artifactInput.value.trim();
+        } else {
+          noResults.style.display = 'none';
+        }
       }
-      return;
-    }
-    for (var i = 0; i < cells.length; i++) {
-      var text = cells[i].textContent.toLowerCase();
-      if (text.includes(filter)) {
-        cells[i].style.backgroundColor = "rgba(234,205,118,0.4)";
-        cells[i].style.opacity = "1";
-      } else {
-        cells[i].style.backgroundColor = "";
-        cells[i].style.opacity = "0.3";
+    });
+  }
+
+  // ── tickets.html table search ──
+  var tableSearch = document.getElementById('tableSearch');
+  if (tableSearch) {
+    tableSearch.addEventListener('input', function () {
+      var query = tableSearch.value.trim().toLowerCase();
+      var table = document.getElementById('ticketsTable');
+      if (!table) return;
+
+      // Get all museum-group rows (rows with rowspan=3 on first td)
+      var allRows = Array.from(table.querySelectorAll('tr'));
+      // Skip header row (index 0)
+      // Museums appear every 3 rows: rows 1-3, 4-6, 7-9, 10-12
+      var groups = [];
+      for (var i = 1; i < allRows.length; i += 3) {
+        groups.push([allRows[i], allRows[i+1], allRows[i+2]].filter(Boolean));
       }
-    }
-  });
+
+      groups.forEach(function (group) {
+        var text = group.map(function(r){ return r.innerText; }).join(' ').toLowerCase();
+        var show = !query || text.includes(query);
+        group.forEach(function (row) {
+          row.style.display = show ? '' : 'none';
+        });
+      });
+    });
+  }
+
 });
-
 
 /* CONTACT FORM */
 document.addEventListener("DOMContentLoaded", function () {
@@ -505,4 +538,3 @@ document.addEventListener("DOMContentLoaded", function () {
 function closeLightbox() {
   document.getElementById("lightbox").style.display = "none";
 }
-

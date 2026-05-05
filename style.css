@@ -6,7 +6,7 @@
 }
 
 .index-body {
-  background-image: url(images/background.png);
+  background-image: url(images/home-background.jpeg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -246,7 +246,7 @@ footer {
   padding: 4px;
 }
 .video-section {
-    background-color: #0A0A0A; 
+    background-color: #0a0a0a53; 
     padding: 80px 10% ;
     text-align: center;
     border-top: 1px solid #D4AF37; 
@@ -339,25 +339,6 @@ footer {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* بداية gallery */
 
 
@@ -432,12 +413,6 @@ figcaption {
 
 
 
-
-
-
-
-
-
 /* بداية tickets */
 
 .tickets-body {
@@ -507,13 +482,6 @@ figcaption {
     color: rgba(234, 205, 118, 0.5);
     font-style: italic;
 }
-
-
-
-
-
-
-
 
 
 
@@ -608,22 +576,6 @@ figcaption {
   margin-top: 20px;
   border-top: 2px solid #d4af37;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* بداية artifacts */
